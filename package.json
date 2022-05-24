@@ -15,6 +15,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test-coverage": "react-scripts test --coverage --watchAll=false",
     "eject": "react-scripts eject",
     "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc . --ext .js,.jsx"
   },
@@ -44,5 +45,11 @@
     "eslint-plugin-react": "^7.30.0",
     "eslint-plugin-react-hooks": "^4.5.0",
     "jest-watch-typeahead": "^0.6.5"
+  },
+  "jest": {
+    "coveragePathIgnorePatterns": [
+      "index.js",
+      "reportWebVitals.js"
+    ]
   }
 }
