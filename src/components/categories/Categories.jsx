@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import AppContext from '../../context/AppContext';
 import { getCategories } from '../../services/api';
+import './categories.css';
 
 function Categories() {
   const { setFilterCategory } = useContext(AppContext);
@@ -16,19 +17,22 @@ function Categories() {
   }, []);
 
   return (
-    <section>
+    <section className="categories">
       <h2>Categorias</h2>
       <ul>
         {categories.map(({ id, name }) => (
-          <li key={id}>
+          <label key={name} htmlFor={name}>
             <input
               type="radio"
+              id={name}
               name="category"
               value={id}
               onClick={(e) => setFilterCategory(e.target.value)}
             />
-            {name}
-          </li>
+            <li>
+              {name}
+            </li>
+          </label>
         ))}
       </ul>
     </section>
