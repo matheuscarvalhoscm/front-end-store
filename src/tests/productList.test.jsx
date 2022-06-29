@@ -25,8 +25,8 @@ describe('Test productList component', () => {
   it('The page should initially render with the text "Digite algum termo [...]"', () => {
     renderWithRouter(<ProductList />);
     const initialText = screen.getAllByRole('heading', { level: 2 });
-    expect(initialText[1]).toBeInTheDocument();
-    expect(initialText[1].innerHTML).toEqual(initialRenderTexts);
+    expect(initialText[2]).toBeInTheDocument();
+    expect(initialText[2].innerHTML).toEqual(initialRenderTexts);
   });
 
   it('There should exist a "cart button" on the page', () => {

@@ -22,7 +22,7 @@ describe('Test ProductCard component', () => {
     expect(productImage).toBeInTheDocument();
     expect(productImage).toHaveAttribute('src');
 
-    const productPrice = screen.getByText('7949.99');
+    const productPrice = screen.getByText('R$ 7949.99');
     expect(productPrice).toBeInTheDocument();
   });
 });
