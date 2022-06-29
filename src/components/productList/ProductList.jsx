@@ -1,5 +1,6 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import ScrollReveal from 'scrollreveal';
 import AppContext from '../../context/AppContext';
 import cartIcon from '../../icons/shopping-cart.svg';
 import { getProductsByCategoryAndQuery } from '../../services/api';
@@ -18,6 +19,8 @@ function ProductList() {
   };
 
   const cartQuantity = cart.reduce((acc, curr) => acc + curr.quantity, 0);
+
+  useEffect(() => ScrollReveal().reveal('.product-card'));
 
   return (
     <main className="product-list">
