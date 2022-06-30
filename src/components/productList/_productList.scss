@@ -1,4 +1,4 @@
-@import '../../styles/variables';
+@import '../../styles/abstracts/variables';
 
 header { grid-area: header; }
 .categories { grid-area: categories; }
@@ -67,20 +67,7 @@ header { grid-area: header; }
   }
 
   button {
-    background-color: $button-color;
-    border: none;
-    border-radius: 0.5em;
-    color: $secondary-text-color;
-    cursor: pointer;
-    font-weight: bold;
-    margin: 0.5em;
-    transition: 0.5s;
-    padding: 1em;
-    width: 12rem;
-
-    &:hover {
-      background-color: $highlight-color;
-    }
+    @include button-style;
   }
 
   .product-card-section {
