@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { getProductsByQuery } from '../services/api';
 import AppContext from '../context/AppContext';
+import '../styles/productDetails/productDetails.css';
 
 import BackPageLink from '../components/backPageLink/backPageLink';
 
@@ -48,23 +49,27 @@ function ProductDetails() {
   } = product;
 
   return (
-    <main>
+    <main className="product-details">
       <BackPageLink pathName="/" />
-      <h1>{`${title} - R$ ${price}`}</h1>
-      <img src={thumbnail} alt={title} />
-      <button
-        type="button"
-        onClick={() => handleAddToCart(title, price, thumbnail)}
-      >
-        Adicionar ao carrinho
-      </button>
-      <section>
+      <section className="product-info">
+        <h1>{`${title} - R$ ${price}`}</h1>
+        <img src={thumbnail} alt={title} />
+        <button
+          type="button"
+          onClick={() => handleAddToCart(title, price, thumbnail)}
+        >
+          Adicionar ao carrinho
+        </button>
+      </section>
+      <section className="technical-specifications">
         <h2>Especificações técnicas</h2>
-        {
-          attributes.map((attribute) => (
-            <p key={attribute.id}>{`${attribute.name}: ${attribute.value_name}`}</p>
-          ))
-        }
+        <ul>
+          {
+            attributes.map((attribute) => (
+              <li key={attribute.id}>{`${attribute.name}: ${attribute.value_name}`}</li>
+            ))
+          }
+        </ul>
       </section>
     </main>
   );

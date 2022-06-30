@@ -1,0 +1,30 @@
+@import '../abstracts/variables';
+
+.product-details {
+  display: flex;
+  border: 1px solid $box-shadow-color;
+  margin: 1em;
+  padding: 1em;
+
+  .product-info {
+    margin: 1em 1em;
+    padding: 1em;
+    padding-right: 2em;
+    border-right: 1px solid $box-shadow-color;
+
+    img {
+      display: block;
+    }
+    
+    button {
+      @include button-style;
+      margin-top: 2em;
+      margin-left: 0 !important;
+    }
+  }
+
+  .technical-specifications {
+    margin: 1em 1em;
+    padding: 1em;
+  }
+}
