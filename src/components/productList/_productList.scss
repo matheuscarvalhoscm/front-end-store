@@ -1,70 +1,16 @@
 @import '../../styles/abstracts/variables';
 
+.product-list {
 header { grid-area: header; }
 .categories { grid-area: categories; }
 .product-card-section { grid-area: productList;}
 
-.product-list {
-  font-family: 'Ubuntu', sans-serif;
-  display: grid;
-  grid-template-areas: 
-  'header header header'
-  'categories productList productList';
-  gap: 0.5em;
-
-  header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: $header-background;
-    box-shadow: 1px 1px 1px $box-shadow-color;
-    padding: 1em 0;
-
-    h2 {
-      display: inline;
-      padding: 0 0.5em;
-    }
-
-    span {
-      padding-left: 0.3em;
-      color: $highlight-color;
-    }
-
-    a {
-      text-decoration: none;
-      padding: 1em;
-
-      img {
-        width: 2.5em;
-      }
-
-      span {
-        background-color: $highlight-color;
-        border-radius: 50%;
-        color: $secondary-text-color;
-        padding: 0.3em;
-        position: relative;
-        bottom: 1.8em;
-        right: 0.5em;
-        display: inline-block;
-        width: 1em;
-        height: 1em;
-        text-align: center;
-      }
-    }
-  }
-
-  input[type="text"] {
-    border-radius: 0.5em;
-    border: 3px solid $input-color;
-    margin: 0.5em;
-    outline: none;
-    padding: 1em;
-    transition: 0.5s;
-    width: 30%;
-
-    &:focus { border: 3px solid $input-focus }
-  }
+font-family: 'Ubuntu', sans-serif;
+display: grid;
+grid-template-areas: 
+'header header'
+'categories productList';
+gap: 0.5em;
 
   button {
     @include button-style;
