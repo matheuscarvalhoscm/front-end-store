@@ -1,81 +1,31 @@
-header {
+.product-list {
+  font-family: 'Ubuntu', sans-serif;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: 'header header' 'categories productList';
+  gap: 0.5em;
+}
+
+.product-list header {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
+  -ms-grid-column-span: 2;
   grid-area: header;
 }
 
-.categories {
+.product-list .categories {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: categories;
 }
 
-.product-card-section {
+.product-list .product-card-section {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
-  -ms-grid-column-span: 2;
   grid-area: productList;
 }
 
-.product-list {
-  font-family: 'Ubuntu', sans-serif;
-  display: -ms-grid;
-  display: grid;
-      grid-template-areas: 'header header header' 'categories productList productList';
-  gap: 0.5em;
-}
-
-.product-list header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  background-color: #f8f862;
-  -webkit-box-shadow: 1px 1px 1px #e2e2e2;
-          box-shadow: 1px 1px 1px #e2e2e2;
-  padding: 1em 0;
-}
-
-.product-list header h2 {
-  display: inline;
-  padding: 0 0.5em;
-}
-
-.product-list header span {
-  padding-left: 0.3em;
-  color: #2d3edf;
-}
-
-.product-list header a {
-  text-decoration: none;
-  padding: 1em;
-}
-
-.product-list header a img {
-  width: 2.5em;
-}
-
-.product-list header a span {
-  background-color: #2d3edf;
-  border-radius: 50%;
-  color: #ffffff;
-  padding: 0.3em;
-  position: relative;
-  bottom: 1.8em;
-  right: 0.5em;
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  text-align: center;
-}
-
-.product-list input[type="text"] {
+.product-list input[type=text] {
   border-radius: 0.5em;
   border: 3px solid #d6d6d6;
   margin: 0.5em;
@@ -86,7 +36,7 @@ header {
   width: 30%;
 }
 
-.product-list input[type="text"]:focus {
+.product-list input[type=text]:focus {
   border: 3px solid #83a9f7;
 }
 
