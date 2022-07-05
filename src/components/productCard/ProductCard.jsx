@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import PropTypes from 'prop-types';
 import AppContext from '../../context/AppContext';
-import './productCard.css';
 
 function ProductCard({
   id,

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import AppProvider from './context/AppProvider';
+import './styles/styles.css';
 
 import Main from './pages/Main';
 import Cart from './pages/Cart';

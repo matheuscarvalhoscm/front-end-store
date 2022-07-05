@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import AppContext from '../../context/AppContext';
 import { getCategories } from '../../services/api';
-import './categories.css';
 
 function Categories() {
   const { setFilterCategory } = useContext(AppContext);

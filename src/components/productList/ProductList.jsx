@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import ScrollReveal from 'scrollreveal';
 import AppContext from '../../context/AppContext';
-import './productList.css';
 
 import ProductCard from '../productCard/ProductCard';
 
