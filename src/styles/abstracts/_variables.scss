@@ -1,16 +1,15 @@
-$primary-text-color: #000;
+$primary-text-color: #000501;
 $secondary-text-color: #ffffff;
-$highlight-color: #2d3edf;
 $subtitle: #646464;
 $list-item-selected: #dadada;
 $input-color: #d6d6d6;
 $input-focus: #83a9f7;
-$button-color: #5969f8;
-
-$header-background: rgb(248, 248, 98); 
-$product-title: rgb(85, 85, 85);
-$box-shadow-color: rgb(226, 226, 226);
-$product-sub-price: rgb(8, 131, 8);
+$button-color: #2b78ca;
+$highlight-color: #1d5087;
+$header-background: #fdcd49; 
+$product-title: #555555;
+$box-shadow-color: #e2e2e2;
+$product-sub-price: #088308;
 
 @mixin button-style {
   background-color: $button-color;
