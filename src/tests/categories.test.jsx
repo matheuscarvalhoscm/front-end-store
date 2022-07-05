@@ -4,7 +4,7 @@ import { screen, waitFor } from '@testing-library/react';
 import * as axios from 'axios';
 import renderWithRouter from './utils/renderWithRouter';
 
-import Categories from '../components/categories/Categories';
+import Categories from '../components/Categories/Categories';
 import { categoriesResponse } from './mocks/apiResponses';
 import { act } from 'react-dom/test-utils';
 

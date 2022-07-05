@@ -2,7 +2,7 @@
 import React from 'react';
 import { screen } from '@testing-library/react';
 import renderWithRouter from './utils/renderWithRouter';
-import ProductCard from '../components/productCard/ProductCard';
+import ProductCard from '../components/ProductCard/ProductCard';
 
 describe('Test ProductCard component', () => {
   it('Should render the correct information from products', () => {
