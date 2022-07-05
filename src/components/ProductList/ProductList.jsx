@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import ScrollReveal from 'scrollreveal';
 import AppContext from '../../context/AppContext';
 
-import ProductCard from '../productCard/ProductCard';
+import ProductCard from '../ProductCard/ProductCard';
 
 function ProductList() {
   const { products } = useContext(AppContext);

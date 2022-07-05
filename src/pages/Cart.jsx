@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import AppContext from '../context/AppContext';
 import '../styles/cart/cart.css';
 
-import BackPageLink from '../components/backPageLink/backPageLink';
+import BackPageLink from '../components/BackPageLink/BackPageLink';
 
 function Cart() {
   const history = useHistory();

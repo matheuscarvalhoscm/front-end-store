@@ -6,7 +6,7 @@ import '../styles/checkout/checkout.css';
 import boleto from '../icons/boleto.svg';
 import masterCard from '../icons/mastercard.svg';
 import visa from '../icons/visa.svg';
-import BackPageLink from '../components/backPageLink/backPageLink';
+import BackPageLink from '../components/BackPageLink/BackPageLink';
 
 function Checkout() {
   const { cart } = useContext(AppContext);

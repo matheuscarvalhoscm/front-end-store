@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from 'react';
 import AppContext from '../../context/AppContext';
 import { getProductsByQuery } from '../../services/api';
 
-import BackPageLink from '../backPageLink/backPageLink';
+import BackPageLink from '../BackPageLink/BackPageLink';
 
 function Details() {
   const url = window.location.pathname.slice(9);

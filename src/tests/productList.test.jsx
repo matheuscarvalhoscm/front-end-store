@@ -3,7 +3,7 @@ import React from 'react';
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import renderWithRouter from './utils/renderWithRouter';
-import ProductList from '../components/productList/ProductList';
+import ProductList from '../pages/Main';
 
 const searchInputPlaceholder = 'Digite algum termo de pesquisa';
 const initialRenderTexts = 'Digite algum termo de pesquisa ou escolha uma categoria.';

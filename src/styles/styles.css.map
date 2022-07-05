@@ -4,11 +4,11 @@
     "sources": [
         "styles.scss",
         "abstracts/_variables.scss",
-        "../components/categories/_categories.scss",
+        "../components/Categories/_categories.scss",
         "../components/Details/_details.scss",
         "../components/Header/_header.scss",
-        "../components/productCard/_productCard.scss",
-        "../components/productList/_productList.scss"
+        "../components/ProductCard/_productCard.scss",
+        "../components/ProductList/_productList.scss"
     ],
     "names": [],
     "file": "styles.css"

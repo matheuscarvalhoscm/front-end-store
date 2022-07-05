@@ -1,8 +1,8 @@
 import React from 'react';
 
 import Header from '../components/Header/Header';
-import Categories from '../components/categories/Categories';
-import ProductList from '../components/productList/ProductList';
+import Categories from '../components/Categories/Categories';
+import ProductList from '../components/ProductList/ProductList';
 
 function Main() {
   return (
