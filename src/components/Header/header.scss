@@ -1,0 +1,51 @@
+@import '../../styles/abstracts/variables';
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $header-background;
+  box-shadow: 1px 1px 1px $box-shadow-color;
+  padding: 1em 0;
+
+  h2 {
+    display: inline;
+    padding: 0 0.5em;
+  }
+
+  span {
+    padding-left: 0.3em;
+    color: $highlight-color;
+  }
+
+  a {
+    text-decoration: none;
+    padding: 1em;
+
+    img {
+      width: 2.5em;
+    }
+
+    span {
+      background-color: $highlight-color;
+      border-radius: 50%;
+      color: $secondary-text-color;
+      padding: 0.3em;
+      position: relative;
+      bottom: 1.8em;
+      right: 0.5em;
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      text-align: center;
+    }
+  }
+
+  input[type=text] {
+    @include text-input;
+  }
+
+  button {
+    @include button-style
+  }
+}

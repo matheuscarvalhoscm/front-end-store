@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import AppContext from '../../context/AppContext';
 import { getProductsByCategoryAndQuery } from '../../services/api';
 import cartIcon from '../../icons/shopping-cart.svg';
+import './header.css';
 
 function Header({ path }) {
   const { filterCategory, setProducts, cart } = useContext(AppContext);
