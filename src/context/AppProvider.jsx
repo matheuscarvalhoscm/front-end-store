@@ -5,12 +5,15 @@ import AppContext from './AppContext';
 function AppProvider({ children }) {
   const [filterCategory, setFilterCategory] = useState('');
   const [cart, setCart] = useState([]);
+  const [products, setProducts] = useState([]);
 
   const contextValue = {
     filterCategory,
     setFilterCategory,
     cart,
     setCart,
+    products,
+    setProducts,
   };
 
   return (
