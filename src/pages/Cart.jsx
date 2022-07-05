@@ -9,22 +9,22 @@ function Cart() {
   const history = useHistory();
   const { cart, setCart } = useContext(AppContext);
 
-  const increaseQuantity = (productId) => {
-    const updateProduct = cart.map((item) => (
-      item.id === productId
-        ? { ...item, quantity: item.quantity + 1 }
-        : item
-    ));
-
-    setCart(updateProduct);
-  };
-
-  const decreaseQuantity = (productId) => {
-    const updateProduct = cart.map((item) => (
-      item.id === productId && item.quantity > 1
-        ? { ...item, quantity: item.quantity - 1 }
-        : item
-    ));
+  const handleQuantity = (productId, event) => {
+    const { value } = event.target;
+    let updateProduct;
+    if (value === '+') {
+      updateProduct = cart.map((item) => (
+        item.id === productId
+          ? { ...item, quantity: item.quantity + 1 }
+          : item
+      ));
+    } else {
+      updateProduct = cart.map((item) => (
+        item.id === productId && item.quantity > 1
+          ? { ...item, quantity: item.quantity - 1 }
+          : item
+      ));
+    }
 
     setCart(updateProduct);
   };
@@ -58,7 +58,7 @@ function Cart() {
                 <button
                   type="button"
                   value="-"
-                  onClick={() => decreaseQuantity(product.id)}
+                  onClick={(e) => handleQuantity(product.id, e)}
                 >
                   -
                 </button>
@@ -66,7 +66,7 @@ function Cart() {
                 <button
                   type="button"
                   value="+"
-                  onClick={() => increaseQuantity(product.id)}
+                  onClick={(e) => handleQuantity(product.id, e)}
                 >
                   +
                 </button>
