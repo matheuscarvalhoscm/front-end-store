@@ -36,7 +36,13 @@ function Details() {
     }
   };
 
-  if (loading) return <h1>Carregando detalhes do produto</h1>;
+  if (loading) {
+    return (
+      <main className="product-details loading">
+        <h1>Carregando detalhes do produto</h1>
+      </main>
+    );
+  }
 
   const {
     title,
