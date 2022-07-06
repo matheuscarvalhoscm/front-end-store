@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import AppContext from '../../context/AppContext';
 import { getProductsByCategoryAndQuery } from '../../services/api';
 import cartIcon from '../../icons/shopping-cart.svg';
+import logo from '../../icons/logo.png';
 
 function Header({ path }) {
   const { filterCategory, setProducts, cart } = useContext(AppContext);
@@ -19,10 +20,7 @@ function Header({ path }) {
   if (path !== '/') {
     return (
       <header>
-        <h2>
-          front-end
-          <span>store</span>
-        </h2>
+        <img src={logo} alt="Project logo" />
         <Link to="/cart">
           <img name="cart" src={cartIcon} alt="Shopping cart icon" />
           <span>{cartQuantity}</span>
@@ -33,10 +31,7 @@ function Header({ path }) {
 
   return (
     <header>
-      <h2>
-        front-end
-        <span>store</span>
-      </h2>
+      <img src={logo} alt="Project logo" />
       <input
         type="text"
         name="search-input"
