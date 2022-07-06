@@ -37,6 +37,7 @@
   border: 1px solid #e2e2e2;
   margin: 1em;
   padding: 1em;
+  height: 50vh;
 }
 
 .product-details .product-info {
@@ -430,6 +431,7 @@ footer {
           align-items: center;
   padding: 2em;
   background-color: #fdcd49;
+  margin-top: 5%;
 }
 
 footer img {
@@ -443,5 +445,10 @@ footer p {
 footer .footer-social-media-container img {
   padding: 1em 2em;
   width: 30px;
+}
+
+.empty-cart {
+  text-align: center;
+  height: 50vh;
 }
 /*# sourceMappingURL=styles.css.map */
