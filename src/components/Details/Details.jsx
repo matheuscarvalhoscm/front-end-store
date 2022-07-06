@@ -2,8 +2,6 @@ import React, { useEffect, useState, useContext } from 'react';
 import AppContext from '../../context/AppContext';
 import { getProductsByQuery } from '../../services/api';
 
-import BackPageLink from '../BackPageLink/BackPageLink';
-
 function Details() {
   const url = window.location.pathname.slice(9);
   const { cart, setCart } = useContext(AppContext);
@@ -49,7 +47,6 @@ function Details() {
 
   return (
     <section className="product-details">
-      <BackPageLink pathName="/" />
       <section className="product-info">
         <h1>{`${title} - R$ ${price}`}</h1>
         <img src={thumbnail} alt={title} />
