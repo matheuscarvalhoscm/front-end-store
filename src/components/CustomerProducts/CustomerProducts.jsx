@@ -3,6 +3,8 @@ import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import AppContext from '../../context/AppContext';
 
+import EmptyCart from '../EmptyCart/EmptyCart';
+
 function CustomerProducts({ path }) {
   const history = useHistory();
   const { cart, setCart } = useContext(AppContext);
@@ -65,14 +67,7 @@ function CustomerProducts({ path }) {
     </button>
   );
 
-  if (cart.length < 1) {
-    return (
-      <main>
-        <h1>Carrinho de Compras</h1>
-        <h2>Seu carrinho está vazio</h2>
-      </main>
-    );
-  }
+  if (cart.length < 1) return <EmptyCart title={title} />;
 
   return (
     <main className="cart">
