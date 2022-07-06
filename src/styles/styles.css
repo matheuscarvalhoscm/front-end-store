@@ -76,6 +76,10 @@
   padding: 1em;
 }
 
+.product-details .loading {
+  height: 50vh;
+}
+
 header {
   display: -webkit-box;
   display: -ms-flexbox;
