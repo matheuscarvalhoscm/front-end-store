@@ -1,19 +1,20 @@
 header {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   background-color: $header-background;
   box-shadow: 1px 1px 1px $box-shadow-color;
   padding: 1em 0;
 
   img {
     display: inline;
-    width: 200px
+    width: 200px;
   }
 
   a {
     text-decoration: none;
     padding: 1em;
+    margin: 0 2em;
 
     img {
       width: 2.5em;
@@ -34,11 +35,19 @@ header {
     }
   }
 
-  input[type=text] {
-    @include text-input;
+  .header-search-container {
+    flex-grow: 2;
+    input[type=text] {
+      @include text-input;
+    }
+
+    button {
+      @include button-style
+    }
   }
 
-  button {
-    @include button-style
+  & img:first-child {
+    margin-left: 3em;
   }
+
 }
