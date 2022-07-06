@@ -4,6 +4,7 @@ import AppContext from '../context/AppContext';
 import Header from '../components/Header/Header';
 import CustomerProducts from '../components/CustomerProducts/CustomerProducts';
 import CheckoutForm from '../components/CheckoutForm/CheckoutForm';
+import Footer from '../components/Footer/Footer';
 
 function Checkout() {
   const { cart } = useContext(AppContext);
@@ -13,6 +14,7 @@ function Checkout() {
       <main>
         <Header path="checkout" />
         <h1>Seu carrinho está vazio :(</h1>
+        <Footer />
       </main>
     );
   }
@@ -25,6 +27,7 @@ function Checkout() {
       <button type="button">
         Comprar
       </button>
+      <Footer />
     </main>
   );
 }
