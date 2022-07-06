@@ -1,0 +1,22 @@
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em;
+  background-color: $header-background;
+
+  img {
+    width: 250px;
+  }
+
+  p {
+    color: $subtitle;
+  }
+
+  .footer-social-media-container {
+    img {
+      padding: 1em 2em;
+      width: 30px;
+    }
+  }
+}
