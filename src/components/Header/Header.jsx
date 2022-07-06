@@ -6,9 +6,12 @@ import { getProductsByCategoryAndQuery } from '../../services/api';
 import cartIcon from '../../icons/shopping-cart.svg';
 import logo from '../../icons/logo.png';
 
+import BackPageLink from '../BackPageLink/BackPageLink';
+
 function Header({ path }) {
   const { filterCategory, setProducts, cart } = useContext(AppContext);
   const [searchInputText, setSearchInputText] = useState('');
+  const backTo = path === 'checkout' ? '/cart' : '/';
 
   const handleSearch = async (category, query) => {
     const { data: { results } } = await getProductsByCategoryAndQuery(category, query);
@@ -20,6 +23,7 @@ function Header({ path }) {
   if (path !== '/') {
     return (
       <header>
+        <BackPageLink pathName={backTo} />
         <img src={logo} alt="Project logo" />
         <Link to="/cart">
           <img name="cart" src={cartIcon} alt="Shopping cart icon" />
@@ -32,19 +36,21 @@ function Header({ path }) {
   return (
     <header>
       <img src={logo} alt="Project logo" />
-      <input
-        type="text"
-        name="search-input"
-        placeholder="Digite algum termo de pesquisa"
-        onChange={({ target }) => setSearchInputText(target.value)}
-        value={searchInputText}
-      />
-      <button
-        type="button"
-        onClick={() => handleSearch(filterCategory, searchInputText)}
-      >
-        Buscar
-      </button>
+      <div className="header-search-container">
+        <input
+          type="text"
+          name="search-input"
+          placeholder="Digite algum termo de pesquisa"
+          onChange={({ target }) => setSearchInputText(target.value)}
+          value={searchInputText}
+        />
+        <button
+          type="button"
+          onClick={() => handleSearch(filterCategory, searchInputText)}
+        >
+          Buscar
+        </button>
+      </div>
       <Link to="/cart">
         <img name="cart" src={cartIcon} alt="Shopping cart icon" />
         <span>{cartQuantity}</span>
