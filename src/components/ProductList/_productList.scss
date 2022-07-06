@@ -2,12 +2,14 @@
 header { grid-area: header; }
 .categories { grid-area: categories; }
 .product-card-section { grid-area: productList;}
+footer { grid-area: footer; }
 
 font-family: 'Ubuntu', sans-serif;
 display: grid;
 grid-template-areas: 
 'header header'
-'categories productList';
+'categories productList'
+'footer footer';
 gap: 0.5em;
 
   button {
