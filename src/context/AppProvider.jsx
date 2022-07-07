@@ -3,8 +3,11 @@ import PropTypes from 'prop-types';
 import AppContext from './AppContext';
 
 function AppProvider({ children }) {
+  const getFromLocalStorage = () => JSON.parse(localStorage.getItem('cart')) || [];
+  const setOnLocalStorage = (data) => localStorage.setItem('cart', JSON.stringify(data));
+
   const [filterCategory, setFilterCategory] = useState('');
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(getFromLocalStorage());
   const [products, setProducts] = useState([]);
 
   const contextValue = {
@@ -14,6 +17,7 @@ function AppProvider({ children }) {
     setCart,
     products,
     setProducts,
+    setOnLocalStorage,
   };
 
   return (
