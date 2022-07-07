@@ -29,6 +29,11 @@ function CustomerProducts({ path }) {
     setCart(updateProduct);
   };
 
+  const handleDelete = (productId) => {
+    const updatedCart = cart.filter(({ id }) => id !== productId);
+    setCart(updatedCart);
+  };
+
   const totalValue = cart.reduce((acc, curr) => acc + (curr.quantity * curr.price), 0).toFixed(2);
   const totalQuantity = cart.reduce((acc, curr) => acc + curr.quantity, 0);
   const title = path === 'cart' ? `Carrinho de Compras (${totalQuantity})` : 'Revise seu pedido';
@@ -67,6 +72,16 @@ function CustomerProducts({ path }) {
     </button>
   );
 
+  const deleteButtons = (product) => (
+    <button
+      className="delete-item-button"
+      type="button"
+      onClick={() => handleDelete(product.id)}
+    >
+      X
+    </button>
+  );
+
   if (cart.length < 1) return <EmptyCart title={title} />;
 
   return (
@@ -77,12 +92,11 @@ function CustomerProducts({ path }) {
           cart.map((product) => (
             <div className="cart-items-inner" key={product.title}>
               <div className="cart-items-details">
+                {path === 'cart' ? deleteButtons(product) : null}
                 <img src={product.thumbnail} alt={product.id} />
                 <p>{product.title}</p>
               </div>
-              {
-                path === 'cart' ? renderCart(product) : renderCheckout(product)
-              }
+              {path === 'cart' ? renderCart(product) : renderCheckout(product)}
             </div>
           ))
         }
