@@ -465,4 +465,27 @@ footer .footer-social-media-container img {
   text-align: center;
   height: 50vh;
 }
+
+.page-not-found {
+  text-align: center;
+  margin: 20vh 0;
+}
+
+.page-not-found button {
+  background-color: #2b78ca;
+  border: none;
+  border-radius: 0.5em;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 0.5em;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  padding: 1em;
+  width: 12rem;
+}
+
+.page-not-found button:hover {
+  background-color: #1d5087;
+}
 /*# sourceMappingURL=styles.css.map */
