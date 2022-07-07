@@ -102,9 +102,7 @@ function CustomerProducts({ path }) {
         }
       </section>
       <h2>{`Valor total da compra: R$ ${totalValue}`}</h2>
-      {
-        path === 'cart' ? renderButton() : null
-      }
+      {path === 'cart' ? renderButton() : null}
     </main>
   );
 }
