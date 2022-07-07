@@ -9,6 +9,6 @@ describe('Test Cart page', () => {
     renderWithRouter(<Cart />);
     const emptyCartMessage = screen.getByRole('heading', { level: 2 });
 
-    expect(emptyCartMessage.innerHTML).toEqual('Seu carrinho está vazio');
+    expect(emptyCartMessage.innerHTML).toEqual('Seu carrinho está vazio :(');
   });
 });
