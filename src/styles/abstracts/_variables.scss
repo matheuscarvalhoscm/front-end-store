@@ -10,6 +10,8 @@ $header-background: #fdcd49;
 $product-title: #555555;
 $box-shadow-color: #e2e2e2;
 $product-sub-price: #088308;
+$danger-color: #d90824;
+$danger-color-highlight: #b1061d;
 
 @mixin button-style {
   background-color: $button-color;
