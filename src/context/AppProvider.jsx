@@ -10,6 +10,30 @@ function AppProvider({ children }) {
   const [cart, setCart] = useState(getFromLocalStorage());
   const [products, setProducts] = useState([]);
 
+  const handleAddToCart = (...product) => {
+    const [id, title, thumbnail, price] = product;
+    const isItemOnCart = cart.find((item) => item.id === id);
+    const indexOfItem = cart.indexOf(isItemOnCart);
+
+    const newItem = {
+      id,
+      title,
+      thumbnail,
+      price,
+      quantity: 1,
+    };
+
+    if (!isItemOnCart) {
+      const updatedCart = [...cart, newItem];
+      setCart(updatedCart);
+      setOnLocalStorage(updatedCart);
+    } else {
+      cart[indexOfItem].quantity += 1;
+      setCart([...cart]);
+      setOnLocalStorage(cart);
+    }
+  };
+
   const contextValue = {
     filterCategory,
     setFilterCategory,
@@ -18,6 +42,7 @@ function AppProvider({ children }) {
     products,
     setProducts,
     setOnLocalStorage,
+    handleAddToCart,
   };
 
   return (

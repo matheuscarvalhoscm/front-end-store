@@ -4,7 +4,7 @@ import { getProductsByQuery } from '../../services/api';
 
 function Details() {
   const url = window.location.pathname.slice(9);
-  const { cart, setCart } = useContext(AppContext);
+  const { handleAddToCart } = useContext(AppContext);
   const [loading, setLoading] = useState(true);
   const [product, setProduct] = useState([]);
 
@@ -18,24 +18,6 @@ function Details() {
     fetchProduct(url);
   }, []);
 
-  const handleAddToCart = (title, price, thumbnail) => {
-    const isItemOnCart = cart.find((item) => item.title === title);
-    if (!isItemOnCart) {
-      const newItem = {
-        title,
-        thumbnail,
-        price,
-        quantity: 1,
-      };
-      const updatedCart = [...cart, newItem];
-      setCart(updatedCart);
-    } else {
-      const cartWithoutUpdatedItem = cart.filter((item) => item.title !== title);
-      isItemOnCart.quantity += 1;
-      setCart([...cartWithoutUpdatedItem, isItemOnCart]);
-    }
-  };
-
   if (loading) {
     return (
       <main className="product-details loading">
@@ -45,6 +27,7 @@ function Details() {
   }
 
   const {
+    id,
     title,
     price,
     thumbnail,
@@ -58,7 +41,7 @@ function Details() {
         <img src={thumbnail} alt={title} />
         <button
           type="button"
-          onClick={() => handleAddToCart(title, price, thumbnail)}
+          onClick={() => handleAddToCart(id, title, price, thumbnail)}
         >
           Adicionar ao carrinho
         </button>
