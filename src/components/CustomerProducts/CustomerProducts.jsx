@@ -7,31 +7,31 @@ import EmptyCart from '../EmptyCart/EmptyCart';
 
 function CustomerProducts({ path }) {
   const history = useHistory();
-  const { cart, setCart } = useContext(AppContext);
-
-  const handleQuantity = (productId, event) => {
-    const { value } = event.target;
-    let updateProduct;
-    if (value === '+') {
-      updateProduct = cart.map((item) => (
-        item.id === productId
-          ? { ...item, quantity: item.quantity + 1 }
-          : item
-      ));
-    } else {
-      updateProduct = cart.map((item) => (
-        item.id === productId && item.quantity > 1
-          ? { ...item, quantity: item.quantity - 1 }
-          : item
-      ));
-    }
-
-    setCart(updateProduct);
-  };
+  const { cart, setCart, setOnLocalStorage } = useContext(AppContext);
 
   const handleDelete = (productId) => {
     const updatedCart = cart.filter(({ id }) => id !== productId);
+
     setCart(updatedCart);
+    setOnLocalStorage(updatedCart);
+  };
+
+  const handleQuantity = (productId, event) => {
+    const { value } = event.target;
+    const updateItem = cart.find((item) => item.id === productId);
+    const indexOfItem = cart.indexOf(updateItem);
+    const item = cart[indexOfItem];
+
+    if (value === '+') {
+      item.quantity += 1;
+    } else {
+      item.quantity -= 1;
+    }
+
+    setCart([...cart]);
+    setOnLocalStorage([...cart]);
+
+    if (item.quantity < 1) handleDelete(productId);
   };
 
   const totalValue = cart.reduce((acc, curr) => acc + (curr.quantity * curr.price), 0).toFixed(2);
