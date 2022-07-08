@@ -1,4 +1,4 @@
-<a href="https://front-end-store-brown.vercel.app/" target="_blank">
+<a href="https://frontend-store-app.vercel.app/" target="_blank">
   <img src="./src/icons/logo.png" alt="Logo do projeto" align="right" width="200">
 </a>
 
