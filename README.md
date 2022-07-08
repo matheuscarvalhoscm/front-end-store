@@ -1,5 +1,5 @@
 <a href="https://front-end-store-brown.vercel.app/" target="_blank">
-  <img src="../front-end-store/src/icons/logo.png" alt="Logo do projeto" align="right" width="200">
+  <img src="./src/icons/logo.png" alt="Logo do projeto" align="right" width="200">
 </a>
 
 # Front-End Store 
