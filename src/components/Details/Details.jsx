@@ -41,7 +41,7 @@ function Details() {
         <img src={thumbnail} alt={title} />
         <button
           type="button"
-          onClick={() => handleAddToCart(id, title, price, thumbnail)}
+          onClick={() => handleAddToCart(id, title, thumbnail, price)}
         >
           Adicionar ao carrinho
         </button>
