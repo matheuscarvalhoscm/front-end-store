@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useContext } from 'react';
 import AppContext from '../../context/AppContext';
-import { getCategories } from '../../services/api';
+import { getCategories, getProductsByCategory } from '../../services/api';
 
 function Categories() {
-  const { setFilterCategory } = useContext(AppContext);
+  const { setFilterCategory, setProducts } = useContext(AppContext);
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
@@ -14,6 +14,12 @@ function Categories() {
 
     fetchCategories();
   }, []);
+
+  const handleClick = async (categoryName) => {
+    const { data: { results } } = await getProductsByCategory(categoryName);
+    setProducts(results);
+    setFilterCategory(results);
+  };
 
   return (
     <section className="categories">
@@ -26,7 +32,7 @@ function Categories() {
               id={name}
               name="category"
               value={id}
-              onClick={(e) => setFilterCategory(e.target.value)}
+              onClick={({ target }) => handleClick(target.value)}
             />
             <li>
               {name}
